@@ -9,21 +9,21 @@
 </template>
 
 <script>
-import TheNavigation from './components/nav/TheNavigation.vue';
+import TheNavigation from "./components/nav/TheNavigation.vue";
 
 export default {
   components: {
-    TheNavigation
+    TheNavigation,
   },
 };
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
-html, body {
-  font-family: 'Lato', sans-serif;
+html,
+body {
+  font-family: "Lato", sans-serif;
 }
 
 * {
@@ -38,4 +38,3 @@ body {
   margin: 0;
 }
 </style>
-

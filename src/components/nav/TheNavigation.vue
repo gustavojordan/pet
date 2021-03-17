@@ -4,7 +4,7 @@
       <button v-if="petIsAuthenticated" v-on:click="logout">Logout</button>
       <button v-if="!petIsAuthenticated" v-on:click="login">Login</button>
     </div>
-    <nav v-if="petIsAuthenticated" >
+    <nav v-if="petIsAuthenticated">
       <ul>
         <li>
           <router-link to="/breeds">Breeds</router-link>
@@ -18,22 +18,22 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(['petIsAuthenticated'])
+    ...mapGetters(["petIsAuthenticated"]),
   },
   methods: {
     logout() {
-      this.$store.dispatch('logout');
-      this.$router.push({ name: 'logout' });
+      this.$store.dispatch("logout");
+      this.$router.push({ name: "logout" });
     },
     login() {
-      this.$store.dispatch('login');
-      this.$router.push({ name: 'breeds' });
-    }
-  }
+      this.$store.dispatch("login");
+      this.$router.push({ name: "breeds" });
+    },
+  },
 };
 </script>
 

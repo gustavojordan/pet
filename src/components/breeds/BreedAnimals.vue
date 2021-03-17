@@ -13,39 +13,39 @@
 </template>
 
 <script>
-import PetItem from '../pets/PetItem.vue';
+import PetItem from "../pets/PetItem.vue";
 
 export default {
-  props: ['breedId'],
+  props: ["breedId"],
   components: {
-    PetItem
+    PetItem,
   },
   computed: {
     breeds() {
-      return this.$store.getters['breed/breeds'];
+      return this.$store.getters["breed/breeds"];
     },
     pets() {
-      return this.$store.getters['pet/pets'];
-    }
+      return this.$store.getters["pet/pets"];
+    },
   },
   data() {
     return {
-      breedName: '',
-      animals: []
+      breedName: "",
+      animals: [],
     };
   },
   methods: {
     loadBreedAnimals(breedId) {
-      const selectedBreed = this.breeds.find(breed => breed.id === breedId);
+      const selectedBreed = this.breeds.find((breed) => breed.id === breedId);
       const animals = selectedBreed.animals;
       const selectedAnimals = [];
       for (const animal of animals) {
-        const selectedPet = this.pets.find(pet => pet.id === animal);
+        const selectedPet = this.pets.find((pet) => pet.id === animal);
         selectedAnimals.push(selectedPet);
       }
       this.animals = selectedAnimals;
       this.breedName = selectedBreed.name;
-    }
+    },
   },
   created() {
     this.loadBreedAnimals(this.breedId);
@@ -53,8 +53,8 @@ export default {
   watch: {
     breedId(newId) {
       this.loadBreedAnimals(newId);
-    }
-  }
+    },
+  },
 };
 </script>
 

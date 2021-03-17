@@ -58,7 +58,7 @@ const router = createRouter({
   },
 });
 
-router.beforeEach(function (to, _, next) {
+router.beforeEach(function(to, _, next) {
   if (to.meta.isAuth) {
     if (store.getters.petIsAuthenticated == false) {
       const login = confirm("Do you want to login?");

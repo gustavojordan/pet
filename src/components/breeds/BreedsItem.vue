@@ -8,11 +8,11 @@
 
 <script>
 export default {
-  props: ['id', 'name', 'animalCount'],
+  props: ["id", "name", "animalCount"],
   computed: {
     breedAnimalsLink() {
       return {
-        name: 'breed-animals',
+        name: "breed-animals",
         params: { breedId: this.id },
       };
     },

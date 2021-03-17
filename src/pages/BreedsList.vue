@@ -12,17 +12,17 @@
 </template>
 
 <script>
-import BreedsItem from '../components/breeds/BreedsItem.vue';
+import BreedsItem from "../components/breeds/BreedsItem.vue";
 
 export default {
   components: {
-    BreedsItem
+    BreedsItem,
   },
   computed: {
     breeds() {
-      return this.$store.getters['breed/breeds'];
-    }
-  }
+      return this.$store.getters["breed/breeds"];
+    },
+  },
 };
 </script>
 
